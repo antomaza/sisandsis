@@ -1,0 +1,142 @@
+
+$colorPrimary: #D49CA5;
+$colorSecondary: white;
+$colorAccent: pink;
+
+$space: 50px;
+$space-sm: 25px;
+
+$sizeImages: ("sm": 32px, "md": 64px, "lg": 128px, "full": 100%);
+
+@mixin tablet {
+    @media only screen and (min-width: 768px) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media only screen and (min-width: 992px) {
+        @content;
+    }
+}
+
+@mixin large {
+    @media only screen and (min-width: 1200px) {
+        @content;
+    }
+}
+
+@mixin bg ($reverse: false) {
+    @if $reverse { 
+       background-image: linear-gradient(to top,  $colorPrimary, $colorSecondary);
+
+    } @else {
+        background-image: linear-gradient(to top,  $colorSecondary, $colorPrimary);
+    }
+}
+
+/* foreachiamos los tamaños de imagenes para matener una misma linea */
+@each $bp, $size in $sizeImages {
+    .image-#{$bp} {
+        width: $size;
+        height: $size;
+    }
+}
+
+header{
+    height: 100px;   
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: $space-sm $space 0;    
+
+    img {
+        width: 70px;
+    }
+
+    .menu {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+
+        ul {
+            li {
+                list-style: none;
+                display: inline;
+
+                a {
+                    text-decoration: none;
+                    color: $colorPrimary;
+                    padding: 5px 10px;
+                    margin-right: 5px;
+
+                    &:hover {
+                        color: $colorAccent;
+                    }
+                }
+            }
+        }
+    }
+}
+
+footer{
+    padding: $space-sm $space ;    
+}
+
+.fotosMenu {
+    @include bg (true);
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    padding: $space $space-sm ; 
+
+    .fotoMenu {
+        /* mobile first */
+        flex: 0 0 100%;
+        padding: $space-sm ;
+
+        img {
+            border-radius: 5px;
+        }
+
+        @include tablet {
+            flex: 0 0 50%;
+            padding: $space-sm;
+        }
+
+        @include desktop {
+            flex: 0 0 25%;
+            padding: 0 $space-sm;
+        }
+    }
+}
+
+.galeria {
+    @include bg (true);
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    padding: $space $space-sm ; 
+
+    .foto-galeria {
+        /* mobile first */
+        flex: 0 0 100%;
+        padding: $space-sm ;
+
+        img {
+            border-radius: 5px;
+        }
+
+        @include tablet {
+            flex: 0 0 50%;
+            padding: $space-sm;
+        }
+
+        @include desktop {
+            flex: 0 0 25%;
+            padding: 0 $space-sm;
+        }
+    }
+}

@@ -1,0 +1,203 @@
+     
+* { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    list-style: none;
+}
+
+
+
+
+
+
+.body {
+    background-color: rgb(255, 239, 213);
+    
+}
+
+
+
+
+
+
+section article {
+    color: whitesmoke;
+    background-color: rgb(231, 165, 145);
+    text-align: center;
+}
+
+.dudas { 
+    background-color: pink;
+    color:white;
+    font-weight: 500;
+    font-size: 17px;
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: 2px;
+    text-align: center;
+
+}
+.preguntasFrecuentes {
+    font-weight: 700;
+    font-size: 13px;
+    text-align: center;
+}
+.respuestasFrecuentes {
+    font-style: italic;
+    font-size: 13px;
+    text-align: center;
+}
+
+.inspiTitulo {
+    background-image: url(../pagina/multimedia/dosnuditos.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-height: 350px;
+    opacity: 45%;
+    padding-top: 50px;
+}
+
+.inspiTitulo p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    font-size: 25px;
+    text-align: center;
+    color: rgb(0, 0, 0);
+}
+
+
+
+.cajaContacto { 
+    background-color: rgb(248, 223, 223);
+    margin: 50px;
+    padding: 10px;
+    border: 10px;
+    border-color: papayawhip; 
+    border-style: solid;
+    width: 300px;
+    height: auto;
+    
+}
+
+
+
+#contactomap { 
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    margin: 5px;
+    justify-content: flex-end;
+
+}
+
+.mapa {
+    margin: 50px;
+
+}
+
+#imagenesPrecios { 
+    padding: 20px;
+    display: flex;
+   flex-wrap: wrap;
+   flex-direction: row;
+   margin: 10px;
+   width: 1000px;
+   justify-content: center;
+   justify-content: space-between;
+}
+
+.img {
+    margin: 100px;
+    width: 100px;
+    height: 300px;
+
+}
+
+.grid-conteiner {
+    background-color: rgb(112, 160, 228);
+    display: grid;
+    grid-template-rows: 75px 75px;
+    grid-template-columns: auto auto;
+    justify-items: center;
+    align-items: center;
+    
+
+}
+.grid-items { 
+    text-align: center;
+    background-position:center ;
+    margin: 100px;
+    width: auto;
+    height: 50px;
+   
+}
+
+@media screen and (min-width: 768px) {
+   .menu {
+       flex-direction: row;
+   }
+   .recibiCompra {
+       flex-direction: row;
+   }
+}
+
+.open-submenu {
+    position: relative;
+}
+
+.submenu { 
+    position: absolute;
+    right: 0;
+}
+
+
+/*aplicado en index*/
+
+.gradient { 
+    text-align: center;
+    width: auto;
+    height: 200px;
+    background-image: linear-gradient(to top, white,    #D49DA6 );
+    
+}
+
+
+
+
+
+/* bootstrap*/
+
+.container-fluid { 
+    background-color: pink;
+}
+
+
+@media screen and (min-width: 768px) {
+    .menu {
+        flex-direction: row;
+    }
+    .recibiCompra {
+        flex-direction: row;
+    }
+ }
+
+
+/*-------------------- Responsive --------------------*/
+
+/*-------------------- Small devices (landscape phones, 576px and up) --------------------*/
+
+@media (min-width: 576px) {}
+
+/*-------------------- Medium devices (tablets, 768px and up) --------------------*/
+
+@media (min-width: 768px) {}
+
+/*-------------------- Large devices (desktops, 992px and up) --------------------*/
+
+@media (min-width: 992px) {}
+
+/*-------------------- Extra large devices (large desktops, 1200px and up) --------------------*/
+
+@media (min-width: 1200px) {}
