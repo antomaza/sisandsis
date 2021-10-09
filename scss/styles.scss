@@ -2,11 +2,16 @@
 $colorPrimary: #D49CA5;
 $colorSecondary: white;
 $colorAccent: pink;
+$textPrimary: #3a1220;
+
 
 $space: 50px;
 $space-sm: 25px;
+$space-xs: 15px;
 
 $sizeImages: ("sm": 32px, "md": 64px, "lg": 128px, "full": 100%);
+
+$sizeWidths: ("full": 100%);
 
 @mixin tablet {
     @media only screen and (min-width: 768px) {
@@ -43,6 +48,17 @@ $sizeImages: ("sm": 32px, "md": 64px, "lg": 128px, "full": 100%);
     }
 }
 
+@each $bp, $size in $sizeWidths {
+    .w-#{$bp} {
+        width: $size !important;    
+    }
+}
+
+*::selection {
+    color: $textPrimary;
+    background-color: $colorPrimary;
+}
+
 header{
     height: 100px;   
     display: flex;
@@ -63,12 +79,18 @@ header{
             li {
                 list-style: none;
                 display: inline;
+                text-align: center;
+
+                &.active {
+                    border-bottom: 1px solid $colorPrimary;
+                    border-top: 1px solid $colorPrimary;
+                    padding: 10px 0; 
+                }
 
                 a {
                     text-decoration: none;
                     color: $colorPrimary;
                     padding: 5px 10px;
-                    margin-right: 5px;
 
                     &:hover {
                         color: $colorAccent;
@@ -80,7 +102,17 @@ header{
 }
 
 footer{
-    padding: $space-sm $space ;    
+    padding: $space-sm $space ;
+    @include bg (false);    
+    color: $textPrimary
+}
+
+.gradient { 
+    @include bg (false);    
+}
+
+.gradient-invertido {
+    @include bg (true);
 }
 
 .fotosMenu {
@@ -120,6 +152,11 @@ footer{
     flex-wrap: wrap;
     padding: $space $space-sm ; 
 
+    &.galeria-invertida {
+        @include bg (false);
+
+    }
+
     .foto-galeria {
         /* mobile first */
         flex: 0 0 100%;
@@ -127,6 +164,27 @@ footer{
 
         img {
             border-radius: 5px;
+            transition: all 1s;
+
+            &.image-rounded {
+                border-radius: 50%;
+
+                &:hover {
+                    border-radius: 5%;
+
+                }
+            }
+        }
+
+        .foto-descripcion {
+            text-align: center;
+            padding: $space-sm;
+
+            p {
+                margin-bottom: 0;
+                color: $textPrimary;
+            }
+
         }
 
         @include tablet {
@@ -139,4 +197,51 @@ footer{
             padding: 0 $space-sm;
         }
     }
+}
+
+.colores {
+    @include bg (false);
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    padding: $space*2 $space-sm ; 
+    justify-content: center;
+
+    .color {
+        /* mobile first */
+        flex: 0 0 15%;
+        padding: $space-sm ;
+        
+        div {
+            border-radius: 50%;
+
+        }
+        span {
+            font-size: 0.8rem;
+        }
+
+        @include tablet {
+            flex: 0 0 10%;
+            padding: $space-sm;
+        }
+
+        @include desktop {
+            flex: 0 0 5%;
+            padding: 0 $space-sm;
+        }
+    }
+}
+
+
+
+.detalles {
+    
+    margin-bottom: 0px;
+    padding: $space 10%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    text-align: center;
+    color: #3a1220;
 }

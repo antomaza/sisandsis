@@ -20,6 +20,20 @@
   height: 100%;
 }
 
+.w-full {
+  width: 100% !important;
+}
+
+*::-moz-selection {
+  color: #3a1220;
+  background-color: #D49CA5;
+}
+
+*::selection {
+  color: #3a1220;
+  background-color: #D49CA5;
+}
+
 header {
   height: 100px;
   display: -webkit-box;
@@ -52,13 +66,19 @@ header .menu {
 header .menu ul li {
   list-style: none;
   display: inline;
+  text-align: center;
+}
+
+header .menu ul li.active {
+  border-bottom: 1px solid #D49CA5;
+  border-top: 1px solid #D49CA5;
+  padding: 10px 0;
 }
 
 header .menu ul li a {
   text-decoration: none;
   color: #D49CA5;
   padding: 5px 10px;
-  margin-right: 5px;
 }
 
 header .menu ul li a:hover {
@@ -67,6 +87,18 @@ header .menu ul li a:hover {
 
 footer {
   padding: 25px 50px;
+  background-image: -webkit-gradient(linear, left bottom, left top, from(white), to(#D49CA5));
+  background-image: linear-gradient(to top, white, #D49CA5);
+}
+
+.gradient {
+  background-image: -webkit-gradient(linear, left bottom, left top, from(white), to(#D49CA5));
+  background-image: linear-gradient(to top, white, #D49CA5);
+}
+
+.gradient-invertido {
+  background-image: -webkit-gradient(linear, left bottom, left top, from(#D49CA5), to(white));
+  background-image: linear-gradient(to top, #D49CA5, white);
 }
 
 .fotosMenu {
@@ -125,6 +157,11 @@ footer {
   padding: 50px 25px;
 }
 
+.galeria.galeria-invertida {
+  background-image: -webkit-gradient(linear, left bottom, left top, from(white), to(#D49CA5));
+  background-image: linear-gradient(to top, white, #D49CA5);
+}
+
 .galeria .foto-galeria {
   /* mobile first */
   -webkit-box-flex: 0;
@@ -135,6 +172,25 @@ footer {
 
 .galeria .foto-galeria img {
   border-radius: 5px;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+.galeria .foto-galeria img.image-rounded {
+  border-radius: 50%;
+}
+
+.galeria .foto-galeria img.image-rounded:hover {
+  border-radius: 5%;
+}
+
+.galeria .foto-galeria .foto-descripcion {
+  text-align: center;
+  padding: 25px;
+}
+
+.galeria .foto-galeria .foto-descripcion p {
+  margin-bottom: 0;
 }
 
 @media only screen and (min-width: 768px) {
@@ -153,5 +209,65 @@ footer {
             flex: 0 0 25%;
     padding: 0 25px;
   }
+}
+
+.colores {
+  background-image: -webkit-gradient(linear, left bottom, left top, from(white), to(#D49CA5));
+  background-image: linear-gradient(to top, white, #D49CA5);
+  width: 100%;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding: 100px 25px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.colores .color {
+  /* mobile first */
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 15%;
+          flex: 0 0 15%;
+  padding: 25px;
+}
+
+.colores .color div {
+  border-radius: 50%;
+}
+
+.colores .color span {
+  font-size: 0.8rem;
+}
+
+@media only screen and (min-width: 768px) {
+  .colores .color {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 10%;
+            flex: 0 0 10%;
+    padding: 25px;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .colores .color {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 5%;
+            flex: 0 0 5%;
+    padding: 0 25px;
+  }
+}
+
+.detalles {
+  margin-bottom: 0px;
+  padding: 50px 10%;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  text-align: center;
+  color: #3a1220;
 }
 /*# sourceMappingURL=styles.css.map */
